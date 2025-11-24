@@ -80,3 +80,6 @@ conda create -n accentid python=3.10
 conda activate accentid
 pip install -r requirements.txt
 streamlit run app.py
+
+
+## 📄 Full Project Report → `AccentSense_Final_Report.docx`
