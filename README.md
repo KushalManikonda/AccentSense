@@ -86,4 +86,6 @@ streamlit run app.py
 
 ## 📄 Full Project Report → `AccentSense_Final_Report.docx`
 
+👉 [Click here to view the report](https://github.com/KushalManikonda/AccentSense/blob/main/accent_identification.ipynb)
+
 ---
