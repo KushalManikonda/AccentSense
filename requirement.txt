@@ -1,0 +1,56 @@
+# Core Python Libraries
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.0
+
+# Audio Processing
+librosa==0.10.1
+soundfile==0.12.1
+python-speech-features==0.6
+
+# Deep Learning
+tensorflow==2.13.0
+torch==2.2.0
+torchaudio==2.2.0
+
+# Hugging Face & Transformers
+transformers==4.44.2
+huggingface-hub==0.23.1
+
+# Model Saving / Utility
+joblib==1.4.2
+
+# UI / Deployment
+streamlit==1.36.0
+streamlit-webrtc==0.47.1
+
+# Plotting & Visualization
+matplotlib==3.8.4
+
+# WebRTC Audio Handling
+av==10.0.0
+
+# -----------------------------------------------------
+# ENVIRONMENT SETUP (RUN THIS FIRST)
+# -----------------------------------------------------
+# Create new environment:
+conda create -n accentid python=3.10 -y
+
+# Activate environment:
+conda activate accentid
+
+# Install dependencies:
+pip install -r requirements.txt
+
+# -----------------------------------------------------
+# OPTIONAL FIXES (IF WINDOWS CAUSES ISSUES)
+# -----------------------------------------------------
+# If transformers shows protobuf errors:
+pip install protobuf==3.20.*
+
+# If PyTorch install fails, use:
+# (choose one based on NVIDIA GPU availability)
+# CPU Only:
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+# OR GPU:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
