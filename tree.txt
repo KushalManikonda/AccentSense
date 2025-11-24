@@ -1,0 +1,13 @@
+IIITH/
+├── accent_bilstm_model.h5
+├── accent_identification_app.py   (if you renamed, else ignore)
+├── app.py
+├── hubert_features.npy
+├── label_encoder.pkl
+├── labels.npy
+├── mfcc_features.npy
+├── sentence_hubert_features.npy
+├── sentence_labels.npy
+├── train_history.pkl
+├── word_hubert_features.npy
+├── word_labels.npy
