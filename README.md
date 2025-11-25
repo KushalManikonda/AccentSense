@@ -89,3 +89,9 @@ streamlit run app.py
 👉 [Click here to view the report](https://github.com/KushalManikonda/AccentSense/blob/main/AccentSense_Final_Report.docx)
 
 ---
+
+## 💻 GitHub Link → `AccentSense`
+
+👉 [Click here to view the Git Repository](https://github.com/KushalManikonda/AccentSense)
+
+---
