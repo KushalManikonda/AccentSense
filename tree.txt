@@ -1,6 +1,6 @@
 IIITH/
 ├── accent_bilstm_model.h5
-├── accent_identification_app.py   (if you renamed, else ignore)
+├── accent_identification_app.py  
 ├── app.py
 ├── hubert_features.npy
 ├── label_encoder.pkl
