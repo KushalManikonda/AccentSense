@@ -1,10 +1,17 @@
+import os
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["OPENBLAS_NUM_THREADS"] = "1"
+
 import torch
 import numpy as np
 import joblib
 import tensorflow as tf
 from transformers import Wav2Vec2FeatureExtractor, HubertModel
 
-import os
+# Limit TensorFlow threading to save memory
+tf.config.threading.set_inter_op_parallelism_threads(1)
+tf.config.threading.set_intra_op_parallelism_threads(1)
 
 BASE_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -16,7 +23,10 @@ LABEL_ENC_PATH = os.path.join(BASE_DIR, "label_encoder.pkl")
 
 HUBERT_NAME = "facebook/hubert-base-ls960"
 
+# Aggressive PyTorch memory optimizations
 device = torch.device("cpu")
+torch.set_num_threads(1)
+torch.set_grad_enabled(False)
 
 def load_models():
     extractor = Wav2Vec2FeatureExtractor.from_pretrained(HUBERT_NAME)
