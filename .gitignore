@@ -1,6 +1,44 @@
-*.npy
-*.pkl
-*.h5
-.ipynb_checkpoints/
+# Environment
+.env
+
+# Python
 __pycache__/
-*.DS_Store
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Uploads (user audio files)
+uploads/
+
+# Models (large binary files - store separately)
+# models/
+
+# Distribution
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest cache
+.pytest_cache/
+
+# Misc
+*.log
+tree.txt

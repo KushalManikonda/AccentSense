@@ -3,12 +3,17 @@ import numpy as np
 import joblib
 import tensorflow as tf
 from transformers import Wav2Vec2FeatureExtractor, HubertModel
+
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    "models"
+)
 
-MODEL_PATH = os.path.join(BASE_DIR, "models", "accent_bilstm_model.h5")
-LABEL_ENC_PATH = os.path.join(BASE_DIR, "models", "label_encoder.pkl")
+MODEL_PATH = os.path.join(BASE_DIR, "accent_bilstm_model.h5")
+LABEL_ENC_PATH = os.path.join(BASE_DIR, "label_encoder.pkl")
+
 HUBERT_NAME = "facebook/hubert-base-ls960"
 
 device = torch.device("cpu")
