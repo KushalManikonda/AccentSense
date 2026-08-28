@@ -1,6 +1,11 @@
 import streamlit as st
 import time
-import sounddevice as sd
+
+try:
+    import sounddevice as sd
+    HAS_SD = True
+except OSError:
+    HAS_SD = False
 
 # ---- IMPORTS FROM YOUR MODULES ----
 from auth.auth_service import create_user, login_user
@@ -189,22 +194,25 @@ st.subheader("Record Using Microphone")
 DURATION = 10
 TARGET_SR = 16000
 
-if st.button("🎤 Record"):
-    st.write("Recording... Speak now.")
-    recording = sd.rec(int(DURATION * TARGET_SR), samplerate=TARGET_SR, channels=1, dtype='float32')
-    sd.wait()
+if not HAS_SD:
+    st.warning("Microphone recording is not available in this cloud environment. Please use the file upload option above.")
+else:
+    if st.button("🎤 Record"):
+        st.write("Recording... Speak now.")
+        recording = sd.rec(int(DURATION * TARGET_SR), samplerate=TARGET_SR, channels=1, dtype='float32')
+        sd.wait()
 
-    audio = recording.flatten()
-    st.session_state.mic_audio = audio
-    wav_bytes = np_audio_to_wav_bytes(audio)
+        audio = recording.flatten()
+        st.session_state.mic_audio = audio
+        wav_bytes = np_audio_to_wav_bytes(audio)
 
-    st.audio(wav_bytes)
+        st.audio(wav_bytes)
 
-    with st.spinner("Processing..."):
-        emb = extract_embedding(audio, extractor, hubert)
-        label, conf = predict(emb, tf_model, label_enc)
+        with st.spinner("Processing..."):
+            emb = extract_embedding(audio, extractor, hubert)
+            label, conf = predict(emb, tf_model, label_enc)
 
-    st.session_state.mic_prediction = (label, conf)
+        st.session_state.mic_prediction = (label, conf)
 
 # ------------------------------
 # MIC RESULT
