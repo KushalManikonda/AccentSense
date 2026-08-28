@@ -71,46 +71,58 @@ To ensure reliability, robustness, and exception safety, a multi-layered automat
 
 ## 🚀 How to Run Locally
 
-### 1. Clone the repository
-\\\ash
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/KushalManikonda/AccentSense.git
 cd AccentSense
-\\\
+
+```
 
 ### 2. Install Dependencies
-\\\ash
+
+```bash
 pip install -r requirements.txt
-\\\
-*(Note: Requires 	f-nightly if running on Python 3.14+)*
+
+```
+
+> **Note:** Requires `tf-nightly` if running on Python 3.14+.
 
 ### 3. Setup Environment Variables
-Create a .env file in the root directory and add your MongoDB connection string:
-\\\nv
+
+Create a `.env` file in the root directory and add your MongoDB connection string:
+
+```env
 MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/?appName=AccentSense
-\\\
+
+```
 
 ### 4. Run the Application
-\\\ash
+
+```bash
 streamlit run app.py
-\\\
-Access the web app at http://localhost:8501.
+
+```
+
+Access the web app at [http://localhost:8501](http://localhost:8501).
 
 ---
 
 ## 📂 Project Structure
-\\\	ext
+
+```text
 AccentSense/
-├── app.py                 # Main Streamlit application entry point
-├── auth/                  # User authentication logic (bcrypt)
-├── db/                    # MongoDB lazy-connection configuration
-├── ml/                    # ML pipeline: HuBERT extraction & BiLSTM prediction
-├── models/                # Saved weights and label encoders
-├── services/              # Audio preprocessing & recommendation mapping
-├── tests/                 # Comprehensive Pytest suite
-├── utils/                 # Storage and helper functions
-├── requirements.txt       # Project dependencies
-└── .gitignore             # Git ignore rules
-\\\
+├── app.py                  # Main Streamlit application entry point
+├── auth/                   # User authentication logic (bcrypt)
+├── db/                     # MongoDB lazy-connection configuration
+├── ml/                     # ML pipeline: HuBERT extraction & BiLSTM prediction
+├── models/                 # Saved weights and label encoders
+├── services/               # Audio preprocessing & recommendation mapping
+├── tests/                  # Comprehensive Pytest suite
+├── utils/                  # Storage and helper functions
+├── requirements.txt        # Project dependencies
+└── .gitignore              # Git ignore rules
+```
 
 ---
 
